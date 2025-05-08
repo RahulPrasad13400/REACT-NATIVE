@@ -4,7 +4,18 @@ import { COLORS } from "@/constants/theme";
 
 export default function TabLayout() {
   return (
-    <Tabs screenOptions={{tabBarShowLabel : false}}>
+    <Tabs screenOptions={{headerShown : false, tabBarShowLabel : false, 
+      tabBarActiveTintColor : COLORS.primary,
+      tabBarInactiveTintColor : COLORS.grey,
+      tabBarStyle : {
+        backgroundColor : "black",
+        position : "absolute",
+        paddingBottom : 8,
+        borderTopWidth : 0,
+        height : 40,
+        elevation : 0
+      }
+    }}>
         <Tabs.Screen name="index" options={{tabBarIcon : ({size, color})=>{
             return <Ionicons name="home" size={size} color={color} />
         }}} />
@@ -15,8 +26,12 @@ export default function TabLayout() {
         <Tabs.Screen name="create" options={{tabBarIcon : ({size})=>{
             return <Ionicons name="add-circle" size={size} color={COLORS.primary} />
         }}} />
-        <Tabs.Screen name="notifications" />
-        <Tabs.Screen name="profile" />
-    </Tabs>
+        <Tabs.Screen name="notifications" options={{tabBarIcon : ({size, color}) =>{
+          return <Ionicons name="heart" size={size} color={color} />
+        }}} />
+        <Tabs.Screen name="profile" options={{tabBarIcon : ({size, color}) =>{
+          return <Ionicons name="person-circle" size={size} color={color} />
+        }}} />
+    </Tabs> 
   )
 }
