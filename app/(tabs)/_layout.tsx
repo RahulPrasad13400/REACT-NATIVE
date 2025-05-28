@@ -5,10 +5,10 @@ import { COLORS } from "@/constants/theme";
 export default function TabLayout() {
   return (
     <Tabs screenOptions={{headerShown : false, tabBarShowLabel : false, 
-      tabBarActiveTintColor : COLORS.primary,
+      tabBarActiveTintColor : "#4B0082",
       tabBarInactiveTintColor : COLORS.grey,
       tabBarStyle : {
-        backgroundColor : "black",
+        backgroundColor : "white",
         position : "absolute",
         paddingBottom : 8,
         borderTopWidth : 0,
